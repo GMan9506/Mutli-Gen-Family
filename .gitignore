@@ -4,6 +4,23 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.csproj
+*.sln
+*.swp
+*.orig
+*.orig.meta
+*.class
+*.userprefs
+.DS_Store
+workspace.xml
+Library/
+*.sln.iml
+Temp/
+obj/
+.vs
+UserSettings
+Builds/*
+Logs/*
 
 /[Ll]ibrary/
 /[Tt]emp/
