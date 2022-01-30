@@ -43,7 +43,7 @@ public class Table : MonoBehaviour
         foreach(ObjectSlot fSlot in SlotList)
             if (!fSlot.isCorrect)
                 return;
-        
-        Debug.Log("All spaces have been filled!");
+
+        GameManager.instance.MinigameCompleted();
     }
 }

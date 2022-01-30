@@ -33,6 +33,7 @@ public class MinigameStart : MonoBehaviour
         if (Input.GetKey("space")) {
         minigameText.gameObject.SetActive(false);
         SceneManager.LoadScene(minigameSceneName, LoadSceneMode.Additive);
+        GameManager.instance.MinigameStart(minigameSceneName);
         Debug.Log("Player entered " + minigameSceneName + " minigame.");
         }
     }

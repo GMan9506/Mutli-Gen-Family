@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/topdowntest.unity
     guid: c97b3e941771eee4fa4a6c64aa01e964
   - enabled: 1
@@ -20,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SeatingMinigame.unity
     guid: cd6f8b3843b38f14894b8796e0937703
+  - enabled: 1
+    path: Assets/Scenes/RobbiesTestofThings.unity
+    guid: 2c9c58bdee79c93478268c7a5472be8e
   m_configObjects: {}
