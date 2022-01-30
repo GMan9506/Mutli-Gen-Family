@@ -25,7 +25,7 @@ public class CamMinigame : MonoBehaviour
     public void Start() {
         targetPos = cam.transform.position - new Vector3(0f,40f,0f);
         camOriginalPos = cam.transform.position;
-        textTargetPos = textt.transform.position + new Vector3(0f,2000f,0f);
+        textTargetPos = textt.transform.position + new Vector3(0f,2500f,0f);
         textOriginalPos = textt.transform.position;
     }
 

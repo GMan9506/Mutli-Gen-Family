@@ -69,7 +69,11 @@ public class CookButton : MonoBehaviour
             // If the screen is almost black...
             if (FadeImg.color.a >= 0.99f)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                if(CookMini2.instance.currentFood)
+                Destroy(CookMini2.instance.currentFood);
+                SceneManager.UnloadSceneAsync("Cooking");
+                SceneManager.LoadScene("Cooking", LoadSceneMode.Additive);
+
                 yield break;
             }
             else

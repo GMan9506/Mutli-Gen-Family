@@ -15,11 +15,17 @@ public class Table : MonoBehaviour
     public List<Transform> SlotSpawnpoints;
     public List<Transform> ObjectSpawnpoints;
 
+    public List<GameObject> utensils;
+
     int maxSlots = 10;
+
     [SerializeField] List<ObjectSlot> SlotList = new List<ObjectSlot>();
     // Start is called before the first frame update
     void Start()
     {
+        
+        utensils = new List<GameObject>();
+       
         if (!instance)
             instance = this;
         else
@@ -33,9 +39,9 @@ public class Table : MonoBehaviour
     {
         for (int i = 0; i < maxSlots; i++)
         {
-            int spawnInt = Random.Range(0, SlotPrefabs.Count);
-            SlotList.Add(GameObject.Instantiate(SlotPrefabs[spawnInt], SlotSpawnpoints[i].position,Quaternion.identity).GetComponent<ObjectSlot>());
-            GameObject.Instantiate(ObjectPrefabs[spawnInt], ObjectSpawnpoints[i].position, Quaternion.identity);
+                        int spawnInt = Random.Range(0, SlotPrefabs.Count);
+                        SlotList.Add(GameObject.Instantiate(SlotPrefabs[spawnInt], SlotSpawnpoints[i].position,Quaternion.identity).GetComponent<ObjectSlot>());
+                        utensils.Add(GameObject.Instantiate(ObjectPrefabs[spawnInt], ObjectSpawnpoints[i].position, Quaternion.identity));
         }
     }
 
@@ -48,7 +54,7 @@ public class Table : MonoBehaviour
         GameManager.instance.MinigameCompleted();
 
         Debug.Log("Gabe game done");
-        if(SceneManager.GetActiveScene().name == "SeatingMinigame") {
+        if(!RandSpawn) {
         GameManager1.completed("minigame3");
                 Debug.Log("Gabe game 3 done");
 
@@ -56,6 +62,17 @@ public class Table : MonoBehaviour
         else {
         GameManager1.completed("minigame1");
                 Debug.Log("Gabe game 1 done");
+
+                for(int x = SlotList.Count-1; x >= 0; x--) {
+                    Destroy(SlotList[x]);
+                    SlotList.RemoveAt(x);
+                }
+
+
+                for(int x = utensils.Count-1; x >= 0; x--) {
+                    Destroy(utensils[x]);
+                    utensils.RemoveAt(x);
+                }
 
         }
     }

@@ -21,3 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SeatingMinigame.unity
     guid: cd6f8b3843b38f14894b8796e0937703
   - enabled: 1
+    path: Assets/Scenes/Camera.unity
+    guid: 9c01ae82613f22842a906cecbd77efc9
+  m_configObjects: {}
