@@ -43,6 +43,7 @@ public class SelectIngredients : MonoBehaviour
             }
             //ChangePhase(currentPhase++);
             GameManager.instance.MinigameCompleted();   
+            GameManager1.completed("minigame0");
         }
 
     }

@@ -12,7 +12,7 @@ public class CookMini2 : MonoBehaviour
     public Transform foodSpawnLocation;
     public GameObject line;
     public static List<CookLineHit> lines;
-    public int foodCount = 10;
+    public int foodCount = 5;
     public int foodCountSoFar = 0;
     public static CookMini2 instance;
     public GameObject currentFood;
@@ -55,6 +55,8 @@ public class CookMini2 : MonoBehaviour
 
     // This method is called from CookLineHit()
     public static void spawnFoodAndCheck() {
+        if(ready) {
+            ready = false;
         // check food count before spawning another
         for(int x = lines.Count-1; x >= 0; x--) {
             Destroy(lines[x].gameObject);
@@ -64,10 +66,18 @@ public class CookMini2 : MonoBehaviour
         instance.foodCountSoFar++;
         if(instance.foodCountSoFar == instance.foodCount) {
             // End minigame. You've successfuly cut and managed the burners.
+            GameManager.instance.MinigameCompleted();
+        GameManager1.completed("minigame2");
             Debug.Log("You've won");
+                    for(int x = lines.Count-1; x >= 0; x--) {
+            Destroy(lines[x].gameObject);
+            lines.RemoveAt(x);
+        }
         }
         else {
             instance.spawnFood();
+        }
+        ready = true;
         }
     }
 

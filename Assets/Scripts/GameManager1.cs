@@ -17,6 +17,8 @@ public class GameManager1 : MonoBehaviour
     public GameObject son;
     public GameObject grandma;
 
+    public GameObject everything;
+
     public void Start() {
         instance = this;
     }
@@ -53,6 +55,10 @@ public void completedTask(string task) {
             break;
 
         case "minigame0":    
+            everything.SetActive(true);
+            player.gameObject.GetComponent<Move>().canMove = true;
+                        player.color = Color.white;
+
             player.sprite = sprites[3];
             
             //player.transform.position = dad.position;
@@ -67,6 +73,11 @@ public void completedTask(string task) {
 
 
         case "minigame1":    
+        
+            everything.SetActive(true);
+            player.gameObject.GetComponent<Move>().canMove = true;
+                        player.color = Color.white;
+
             player.sprite = sprites[4];
             // reappear dad
             //player.transform.position = dad.position;
@@ -80,6 +91,11 @@ public void completedTask(string task) {
             break;
 
         case "minigame2":    
+        
+            everything.SetActive(true);
+            player.gameObject.GetComponent<Move>().canMove = true;
+                        player.color = Color.white;
+
             player.sprite = sprites[0];
             // reappear grandma
             //player.transform.position = dad.position;
@@ -92,6 +108,11 @@ public void completedTask(string task) {
             break;
 
         case "minigame3":    
+        
+            everything.SetActive(true);
+            player.gameObject.GetComponent<Move>().canMove = true;
+                        player.color = Color.white;
+
             player.sprite = sprites[1];
             // reappear daughter
             //player.transform.position = dad.position;

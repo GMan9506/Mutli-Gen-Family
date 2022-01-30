@@ -10,6 +10,8 @@ public class MinigameStart : MonoBehaviour
     public TMP_Text minigameText;
     public string minigameSceneName;
     public static int hey = 0;
+    public GameObject everything;
+    public Move player;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -35,7 +37,10 @@ public class MinigameStart : MonoBehaviour
         minigameText.gameObject.SetActive(false);
         GameManager1.completed("minigame" + hey);
         hey++;
-        //SceneManager.LoadScene(minigameSceneName, LoadSceneMode.Additive);
+        everything.SetActive(false);
+        player.canMove = false;
+        GameManager1.instance.player.color = Color.clear;
+        SceneManager.LoadScene(minigameSceneName, LoadSceneMode.Additive);
         GameManager.instance.MinigameStart(minigameSceneName);
         Debug.Log("Player entered " + minigameSceneName + " minigame.");
         }

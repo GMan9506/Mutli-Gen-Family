@@ -19,6 +19,7 @@ public class CookLineHit : MonoBehaviour
                     }
                 }
                 // This is unreachable, unless we've run out of lines.
+                if(CookMini2.ready)
                 CookMini2.spawnFoodAndCheck();
             }
             else {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Table : MonoBehaviour
 {
@@ -45,5 +46,17 @@ public class Table : MonoBehaviour
                 return;
 
         GameManager.instance.MinigameCompleted();
+
+        Debug.Log("Gabe game done");
+        if(SceneManager.GetActiveScene().name == "SeatingMinigame") {
+        GameManager1.completed("minigame3");
+                Debug.Log("Gabe game 3 done");
+
+        }
+        else {
+        GameManager1.completed("minigame1");
+                Debug.Log("Gabe game 1 done");
+
+        }
     }
 }

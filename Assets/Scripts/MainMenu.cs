@@ -12,12 +12,13 @@ public class MainMenu : MonoBehaviour
     public bool started;
     public GameObject mainMenuObj;
     public Camera mainCamera;
+    public GameObject HUD;
 
     // MainMenu GameObject being disabled will disable this main menu
 
     void Update()
     {
-        if(Input.GetKey("space") && !started) {
+        if(Input.anyKey && !started) {
             StartCoroutine(NextScene());
             started = true;
         }
@@ -83,9 +84,10 @@ public class MainMenu : MonoBehaviour
     }
 
     private IEnumerator nextStep() {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(25);
         startAnimator.gameObject.SetActive(false);
         mainCamera.gameObject.SetActive(true);
+        HUD.SetActive(true);
         GameManager1.completed("intro");
     }
 
