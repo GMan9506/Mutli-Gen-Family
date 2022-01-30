@@ -5,17 +5,76 @@ using Ink.Runtime;
 
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class BasicInkExample : MonoBehaviour {
+
+    [SerializeField]
+    private TextAsset initialStory = null;
+    private TextAsset firstStory = null;
+    private TextAsset secondStory = null;
+    private TextAsset thirdStory = null;
+    private TextAsset endStory = null;
+
+    public Story story;
+
+    [SerializeField]
+    private Canvas canvas = null;
+
+    // UI Prefabs
+    [SerializeField]
+    private Text textPrefab = null;
+
+    [SerializeField]
+    private Button buttonPrefab = null;
+
+
     public static event Action<Story> OnCreateStory;
-	
+
+    // Variable that represents that it is suppose to start story
+    public bool isStarted = false;
+
+    // Variable that represents the part of the story we are in
+    public STATE isState = STATE.INITIAL;
+
+    public enum STATE
+    {
+        INITIAL,
+        FIRST,
+        SECOND,
+        THIRD,
+        END
+    }
+
     void Awake () {
 		// Remove the default message
 		RemoveChildren();
-		StartStory();
+        if( isStarted )
+		    StartStory();
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
 	void StartStory () {
-		story = new Story (inkJSONAsset.text);
+        //Specify which story to start
+        switch (isState)
+        {
+            case STATE.INITIAL:
+                story = new Story(initialStory.text);
+                break;
+            case STATE.FIRST:
+                story = new Story(firstStory.text);
+                break;
+            case STATE.SECOND:
+                story = new Story(secondStory.text);
+                break;
+            case STATE.THIRD:
+                story = new Story(thirdStory.text);
+                break;
+            case STATE.END:
+                story = new Story(endStory.text);
+                break;
+            default:
+                break;
+        }
+
+		// story = new Story (inkJSONAsset.text);
         if(OnCreateStory != null) OnCreateStory(story);
 		RefreshView();
 	}
@@ -55,6 +114,8 @@ public class BasicInkExample : MonoBehaviour {
 				StartStory();
 			});
 		}
+        Canvas.ForceUpdateCanvases();
+
 	}
 
 	// When we click the choice button, tell the story to choose that choice!
@@ -95,16 +156,4 @@ public class BasicInkExample : MonoBehaviour {
 		}
 	}
 
-	[SerializeField]
-	private TextAsset inkJSONAsset = null;
-	public Story story;
-
-	[SerializeField]
-	private Canvas canvas = null;
-
-	// UI Prefabs
-	[SerializeField]
-	private Text textPrefab = null;
-	[SerializeField]
-	private Button buttonPrefab = null;
 }
