@@ -9,6 +9,7 @@ public class MinigameStart : MonoBehaviour
 {
     public TMP_Text minigameText;
     public string minigameSceneName;
+    public static int hey = 0;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,9 +31,11 @@ public class MinigameStart : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other) {
         if(other.tag == "Player") {
-        if (Input.GetKey("space")) {
+        if (Input.GetKeyDown("space")) {
         minigameText.gameObject.SetActive(false);
-        SceneManager.LoadScene(minigameSceneName, LoadSceneMode.Additive);
+        GameManager1.completed("minigame" + hey);
+        hey++;
+        //SceneManager.LoadScene(minigameSceneName, LoadSceneMode.Additive);
         GameManager.instance.MinigameStart(minigameSceneName);
         Debug.Log("Player entered " + minigameSceneName + " minigame.");
         }
