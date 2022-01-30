@@ -14,7 +14,7 @@ public class Table : MonoBehaviour
     public List<Transform> SlotSpawnpoints;
     public List<Transform> ObjectSpawnpoints;
 
-    int maxSlots = 6;
+    int maxSlots = 10;
     [SerializeField] List<ObjectSlot> SlotList = new List<ObjectSlot>();
     // Start is called before the first frame update
     void Start()
