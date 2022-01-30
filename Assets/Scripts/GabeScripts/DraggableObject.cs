@@ -6,10 +6,16 @@ public class DraggableObject : MonoBehaviour
 {
     public enum ObjectType {SPOON, FORK, KNIFE, PLATE, GLASS }
     public ObjectType Type;
+    public enum FamilyMember {SON, DAUGHTER, MOM, DAD, GRANDMA, GRANDPA }
+    public FamilyMember Member;
+
     public ObjectSlot SlotToSet;
 
-    public bool isDragging = false;
+    public bool isDragging = false; //used for mouse up function so only the one that is dragging will call the logic
     public bool isSet = false;
+    public bool isPortrait = false;
+
+    public AudioClip[] soundClips;
 
     private void OnMouseDrag()
     {
@@ -32,10 +38,18 @@ public class DraggableObject : MonoBehaviour
             isDragging = false;
             if (SlotToSet)
             {
-                isSet = true;
-                transform.position = SlotToSet.transform.position;
-                SlotToSet.isFilled = true;
-                Table.instance.CheckSlotsFilled();
+                //when an object is placed into the slot space, it will only lock in if it is correct,
+                //however, for the seating minigame, they will all lock in, but are still changable until they are all correctly placed
+                if (!isPortrait)
+                    isSet = true;
+
+                if (!SlotToSet.isFilled)
+                {
+                    transform.position = SlotToSet.transform.position;
+                    SlotToSet.IsFilled = true;
+                    PlaySound.OneShot(Camera.main.gameObject, (soundClips[Random.Range(0, soundClips.Length)]));
+                    Table.instance.CheckSlotsCondition();
+                }
             }
         }
         
