@@ -2,37 +2,29 @@
 using UnityEngine.UI;
 using System;
 using Ink.Runtime;
+using UnityEngine.SceneManagement;
 
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class BasicInkExample : MonoBehaviour {
 
-    [SerializeField]
-    private TextAsset initialStory = null;
-    private TextAsset firstStory = null;
-    private TextAsset secondStory = null;
-    private TextAsset thirdStory = null;
-    private TextAsset endStory = null;
+    public  TextAsset initialStory = null;
 
-    public Story story;
+    public  TextAsset firstStory = null;
 
-    [SerializeField]
-    private Canvas canvas = null;
+    public  TextAsset secondStory = null;
+
+    public  TextAsset thirdStory = null;
+
+    public  TextAsset endStory = null;
+
+    public  Story story;
+
+    public  Canvas canvas = null;
 
     // UI Prefabs
-    [SerializeField]
-    private Text textPrefab = null;
+    public  Text textPrefab = null;
 
-    [SerializeField]
-    private Button buttonPrefab = null;
-
-
-    public static event Action<Story> OnCreateStory;
-
-    // Variable that represents that it is suppose to start story
-    public bool isStarted = false;
-
-    // Variable that represents the part of the story we are in
-    public STATE isState = STATE.INITIAL;
+    public  Button buttonPrefab = null;
 
     public enum STATE
     {
@@ -43,17 +35,32 @@ public class BasicInkExample : MonoBehaviour {
         END
     }
 
+    public static event Action<Story> OnCreateStory;
+
+    // Variable that represents that it is suppose to start story
+    public bool isStarted = false;
+
+    // Variable that represents the part of the story we are in
+    public static STATE state = STATE.INITIAL;
+
+
     void Awake () {
 		// Remove the default message
 		RemoveChildren();
-        if( isStarted )
-		    StartStory();
+
+        //Set the story based on which scene is loaded.
+        
+        state = ( SceneManager.GetSceneByName("topdowntest").IsValid() ) ? STATE.FIRST : state;
+        state = (SceneManager.GetSceneByName("TableSetUp").IsValid()) ? STATE.SECOND : state;
+        state = (SceneManager.GetSceneByName("testMinigame").IsValid()) ? STATE.FIRST : state;
+
+        StartStory();
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
-	void StartStory () {
+	public void StartStory () {
         //Specify which story to start
-        switch (isState)
+        switch (state)
         {
             case STATE.INITIAL:
                 story = new Story(initialStory.text);
@@ -111,12 +118,19 @@ public class BasicInkExample : MonoBehaviour {
 		else {
 			Button choice = CreateChoiceView("End of story.\nRestart?");
 			choice.onClick.AddListener(delegate{
-				StartStory();
+                //StartStory();
+                UnloadDialogManager();
 			});
 		}
+
         Canvas.ForceUpdateCanvases();
 
 	}
+
+    void UnloadDialogManager()
+    {
+        SceneManager.UnloadSceneAsync("DialogManager");
+    }
 
 	// When we click the choice button, tell the story to choose that choice!
 	void OnClickChoiceButton (Choice choice) {

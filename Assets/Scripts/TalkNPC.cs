@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class TalkNPC : MonoBehaviour
@@ -33,14 +34,23 @@ public class TalkNPC : MonoBehaviour
         if(other.tag == "Player") {
         Debug.Log("Still in grammys collider");
         if (Input.GetKey("space")) {
-        interactText.gameObject.SetActive(false);
-        // Integrate INK here----
+            interactText.gameObject.SetActive(false);
+                // Integrate INK here----
 
-        noticeMessage.text = "She doesn't want to talk right now..";
+                //Load the DialogManager Scene
+                //Check ot see if the DialogManager scene is already loaded.
+                if ( SceneManager.GetSceneByName("DialogManager").IsValid() )
+                { }
+                else
+                    SceneManager.LoadScene("DialogManager", LoadSceneMode.Additive);
+                
 
-        // Integerate INK here ---
-        Debug.Log("Player is talking to person.");
+                //noticeMessage.text = "She doesn't want to talk right now..";
+
+                // Integerate INK here ---
+                Debug.Log("Player is talking to person.");
         }
     }
+    
 }
 }
