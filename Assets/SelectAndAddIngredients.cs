@@ -21,7 +21,7 @@ public class SelectAndAddIngredients : MonoBehaviour
     {
         var data = (DataWrapper)_list.listBank.GetListContent(selectedContentID);
         Image content = (Image)data.value;
-        Debug.Log("Selected content ID: " + selectedContentID + ", Content: " + content);
+        //Debug.Log("Selected content ID: " + selectedContentID + ", Content: " + content);
         
 
         //GameObject listViewpoint = _ingredientlist.transform.Find("Viewpoint").gameObject;
@@ -39,6 +39,7 @@ public class SelectAndAddIngredients : MonoBehaviour
             Instantiate(content, _ingredientListContent.transform);
             counter ++;
         }
+        PlaySound.OneShot(gameObject, null, 1);
         SelectIngredients.instance.CheckRecipie(_ingredientListContent.transform.GetComponentsInChildren<Ingredients>());
     }
 }
