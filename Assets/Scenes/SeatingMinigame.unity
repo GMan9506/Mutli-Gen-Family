@@ -217,6 +217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372074650132817327, guid: 5dfea83152c5c6a4f8e8c0329e99adb1,
         type: 3}
+      propertyPath: m_Color.a
+      value: 0.84313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372074650132817327, guid: 5dfea83152c5c6a4f8e8c0329e99adb1,
+        type: 3}
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
@@ -578,6 +583,11 @@ PrefabInstance:
       propertyPath: FamilySeat
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6372074650132817327, guid: 5dfea83152c5c6a4f8e8c0329e99adb1,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.7137255
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfea83152c5c6a4f8e8c0329e99adb1, type: 3}
 --- !u!114 &249703456 stripped
@@ -849,6 +859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372074650132817327, guid: 5dfea83152c5c6a4f8e8c0329e99adb1,
         type: 3}
+      propertyPath: m_Color.a
+      value: 0.84313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372074650132817327, guid: 5dfea83152c5c6a4f8e8c0329e99adb1,
+        type: 3}
       propertyPath: m_SortingOrder
       value: 41
       objectReference: {fileID: 0}
@@ -1042,6 +1057,11 @@ PrefabInstance:
       propertyPath: FamilySeat
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6372074650132817327, guid: 5dfea83152c5c6a4f8e8c0329e99adb1,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.7137255
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfea83152c5c6a4f8e8c0329e99adb1, type: 3}
 --- !u!114 &497524030 stripped
@@ -1208,6 +1228,16 @@ PrefabInstance:
       propertyPath: Member
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5761609937900820204, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
+        type: 3}
+      propertyPath: soundClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761609937900820204, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
+        type: 3}
+      propertyPath: soundClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: bb35db1e38dfb9e4190b374985383b83, type: 3}
     - target: {fileID: 5761609937900820206, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
         type: 3}
       propertyPath: m_RootOrder
@@ -1329,6 +1359,16 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5761609937900820204, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
+        type: 3}
+      propertyPath: soundClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761609937900820204, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
+        type: 3}
+      propertyPath: soundClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8164a4242f4b22249b0a7e5712c5f2a2, type: 3}
     - target: {fileID: 5761609937900820206, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
         type: 3}
       propertyPath: m_RootOrder
@@ -1559,6 +1599,16 @@ PrefabInstance:
       propertyPath: Member
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5761609937900820204, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
+        type: 3}
+      propertyPath: soundClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761609937900820204, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
+        type: 3}
+      propertyPath: soundClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f5c803a724adf244b294a12e4841c09, type: 3}
     - target: {fileID: 5761609937900820206, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
         type: 3}
       propertyPath: m_RootOrder
@@ -1812,6 +1862,11 @@ PrefabInstance:
         type: 3}
       propertyPath: FamilySeat
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372074650132817327, guid: 5dfea83152c5c6a4f8e8c0329e99adb1,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.6862745
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfea83152c5c6a4f8e8c0329e99adb1, type: 3}
@@ -2399,6 +2454,16 @@ PrefabInstance:
       propertyPath: Member
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5761609937900820204, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
+        type: 3}
+      propertyPath: soundClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761609937900820204, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
+        type: 3}
+      propertyPath: soundClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 78022bddea7cdb040a78734f744fb113, type: 3}
     - target: {fileID: 5761609937900820206, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
         type: 3}
       propertyPath: m_RootOrder
@@ -3226,6 +3291,16 @@ PrefabInstance:
       propertyPath: Member
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5761609937900820204, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
+        type: 3}
+      propertyPath: soundClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761609937900820204, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
+        type: 3}
+      propertyPath: soundClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c82facfa0aacbae4b9b069f6224fdd20, type: 3}
     - target: {fileID: 5761609937900820206, guid: 7ce7e587ac3ed3e42806af8bd39095a8,
         type: 3}
       propertyPath: m_RootOrder
