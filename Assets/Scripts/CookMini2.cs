@@ -68,6 +68,7 @@ public class CookMini2 : MonoBehaviour
             // End minigame. You've successfuly cut and managed the burners.
             GameManager.instance.MinigameCompleted();
         GameManager1.completed("minigame2");
+        instance.gameEnded = true;
             Debug.Log("You've won");
                     for(int x = lines.Count-1; x >= 0; x--) {
             Destroy(lines[x].gameObject);
@@ -75,6 +76,7 @@ public class CookMini2 : MonoBehaviour
         }
         }
         else {
+            if(!instance.gameEnded)
             instance.spawnFood();
         }
         ready = true;

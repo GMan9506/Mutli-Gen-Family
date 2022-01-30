@@ -46,6 +46,7 @@ public class CookButton : MonoBehaviour
         foreach(CookButton but in CookMini2.instance.buttons) {
             but.gameObject.GetComponent<Collider2D>().enabled = false;
         }
+        CookMini2.instance.gameEnded = true;
 
         yield return new WaitForSeconds(2);
         StartCoroutine(NextScene());
