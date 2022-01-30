@@ -51,8 +51,9 @@ public class BasicInkExample : MonoBehaviour {
         //Set the story based on which scene is loaded.
         
         state = ( SceneManager.GetSceneByName("topdowntest").IsValid() ) ? STATE.FIRST : state;
-        state = (SceneManager.GetSceneByName("TableSetUp").IsValid()) ? STATE.SECOND : state;
-        state = (SceneManager.GetSceneByName("testMinigame").IsValid()) ? STATE.FIRST : state;
+        state = ( SceneManager.GetSceneByName("TableSetUp").IsValid() ) ? STATE.SECOND : state;
+        state = ( SceneManager.GetSceneByName("testMinigame").IsValid() ) ? STATE.THIRD : state;
+        state = ( SceneManager.GetSceneByName("testMinigame").IsValid() ) ? STATE.END : state;
 
         StartStory();
 	}

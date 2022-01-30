@@ -38,10 +38,8 @@ public class TalkNPC : MonoBehaviour
                 // Integrate INK here----
 
                 //Load the DialogManager Scene
-                //Check ot see if the DialogManager scene is already loaded.
-                if ( SceneManager.GetSceneByName("DialogManager").IsValid() )
-                { }
-                else
+                //Check to see if the DialogManager scene is already loaded.
+                if ( !SceneManager.GetSceneByName("DialogManager").IsValid() )
                     SceneManager.LoadScene("DialogManager", LoadSceneMode.Additive);
                 
 

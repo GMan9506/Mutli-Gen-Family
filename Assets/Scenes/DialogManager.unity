@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e957d58a4584a8894329531ec0b096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialStory: {fileID: 0}
+  initialStory: {fileID: 4900000, guid: c2acabba8a26951408889c308d179bec, type: 3}
   firstStory: {fileID: 4900000, guid: 6cf48bb6d89824cc69e35b43f9a1aca6, type: 3}
   secondStory: {fileID: 0}
   thirdStory: {fileID: 0}
