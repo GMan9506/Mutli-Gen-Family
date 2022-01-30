@@ -9,17 +9,27 @@ public class IntListBank : BaseListBank
     [SerializeField]
     private Image[] _contents;
 
+    // Create a data wrapper for carrying the data
+    private DataWrapper _dataWrapper = new DataWrapper();
+
     // This function will be invoked by the `CircularScrollingList`
     // when acquiring the content to display
     // The object returned will be converted to the type `object`
     // which will be converted back to its own type in `IntListBox.UpdateDisplayContent()`
     public override object GetListContent(int index)
     {
-        return _contents[index];
+        _dataWrapper.value = _contents[index];
+        return _dataWrapper;
+        //return _contents[index];
     }
 
     public override int GetListLength()
     {
         return _contents.Length;
     }
+}
+
+public class DataWrapper
+{
+    public Image value;
 }
