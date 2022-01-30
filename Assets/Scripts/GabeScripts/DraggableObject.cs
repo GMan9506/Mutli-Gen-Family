@@ -47,7 +47,8 @@ public class DraggableObject : MonoBehaviour
                 {
                     transform.position = SlotToSet.transform.position;
                     SlotToSet.IsFilled = true;
-                    PlaySound.OneShot(Camera.main.gameObject, (soundClips[Random.Range(0, soundClips.Length)]));
+                    if(soundClips.Length > 0)
+                        PlaySound.OneShot(Camera.main.gameObject, (soundClips[Random.Range(0, soundClips.Length)]));
                     Table.instance.CheckSlotsCondition();
                 }
             }
