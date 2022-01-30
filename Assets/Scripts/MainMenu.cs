@@ -86,6 +86,7 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(30);
         startAnimator.gameObject.SetActive(false);
         mainCamera.gameObject.SetActive(true);
+        GameManager1.completed("intro");
     }
 
 }

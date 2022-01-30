@@ -44,6 +44,14 @@ public void completedTask(string task) {
 
     switch(task) {
 
+        case "intro":
+            dad.SetActive(true);
+            mom.SetActive(true);
+            son.SetActive(true);
+            grandma.SetActive(true);
+            player.color = Color.white;
+            break;
+
         case "minigame0":    
             player.sprite = sprites[3];
             
