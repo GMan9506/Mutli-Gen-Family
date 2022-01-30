@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CamMinigame : MonoBehaviour
 {
@@ -14,6 +15,19 @@ public class CamMinigame : MonoBehaviour
     public GameObject credits;
     public bool gameEnded;
     public GameObject cam;
+    public Vector3 targetPos;
+    public float camSpeed;
+    public Vector3 textTargetPos;
+    public Vector3 textOriginalPos;
+    public Vector3 camOriginalPos;
+    public RectTransform textt;
+
+    public void Start() {
+        targetPos = cam.transform.position - new Vector3(0f,40f,0f);
+        camOriginalPos = cam.transform.position;
+        textTargetPos = textt.transform.position + new Vector3(0f,2000f,0f);
+        textOriginalPos = textt.transform.position;
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -118,14 +132,58 @@ public class CamMinigame : MonoBehaviour
         credits.SetActive(true);
         StartCoroutine(NextScene1());
 
-       // StartCoroutine(moveCameraDown());
+       StartCoroutine(moveCameraDown());
+
+        StartCoroutine(fade());
 
     }
 
     private IEnumerator moveCameraDown() {
+        while(cam.transform.position.y >= targetPos.y) {
+
+            cam.transform.position = Vector3.Lerp(cam.transform.position, targetPos, camSpeed * Time.deltaTime);
+            textt.transform.position = Vector3.Lerp(textt.transform.position, textTargetPos, camSpeed * Time.deltaTime);
+
+            yield return null;
+
+        }
        // cam.transform.
-       yield return null;
+       yield break;
     }
 
+    public IEnumerator fade() {
+        yield return new WaitForSeconds(30);
+        StartCoroutine(NextScene2());
+    }
+
+
+    private void FadeScene2() {
+        // Face the scene to black, begin first animation clip with grandma, car pulling up, and camera.
+        FadeImg.color = Color.Lerp(FadeImg.color, Color.black, Time.deltaTime);
+    }
+
+    public IEnumerator NextScene2()
+    {
+        do
+        {
+            // Start fading towards black.
+            FadeScene2();
+            // If the screen is almost clear...
+            if (FadeImg.color.a >= 0.99f)
+            {
+                FadeImg.color = Color.black;
+
+                // Restart the game.
+                SceneManager.LoadScene(0);
+
+
+                yield break;
+            }
+            else
+            {
+                yield return null;
+            }
+        } while (true);
+    }
 
 }
