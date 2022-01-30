@@ -16472,17 +16472,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1608748611}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 1579477770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 535503efa31dcf04882e38d31b36e393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minigameText: {fileID: 169877691}
-  minigameSceneName: IngredientPicker
-=======
->>>>>>> Stashed changes
 --- !u!1001 &1615077184
 PrefabInstance:
   m_ObjectHideFlags: 0

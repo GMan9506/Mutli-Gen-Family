@@ -21,15 +21,3 @@ EditorBuildSettings:
     path: Assets/Scenes/SeatingMinigame.unity
     guid: cd6f8b3843b38f14894b8796e0937703
   - enabled: 1
-<<<<<<< Updated upstream
-    path: Assets/Scenes/IngredientPicker.unity
-    guid: 2c9c58bdee79c93478268c7a5472be8e
-  - enabled: 0
-    path: Assets/Scenes/DialogManager.unity
-    guid: 8b89d2022a8cae947b3d3581ae087bed
-  - enabled: 1
-=======
->>>>>>> Stashed changes
-    path: Assets/Scenes/Camera.unity
-    guid: 9c01ae82613f22842a906cecbd77efc9
-  m_configObjects: {}
