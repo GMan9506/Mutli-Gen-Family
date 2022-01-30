@@ -53,6 +53,10 @@ MonoBehaviour:
   isDragging: 0
   isSet: 0
   isPortrait: 0
+  soundClips:
+  - {fileID: 8300000, guid: 3facc7d985d36d040bae8d40692f019e, type: 3}
+  - {fileID: 8300000, guid: 6b98f492cb5b94447be54e64c89b9e0c, type: 3}
+  - {fileID: 8300000, guid: b890c1688c1b8304b931acc36116b124, type: 3}
 --- !u!212 &1353330880710518969
 SpriteRenderer:
   m_ObjectHideFlags: 0
